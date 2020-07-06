@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #222;
+}
+header{
+    width: 100%;
+    height:auto;
+    padding: 1.5rem;
+}
+header h2 {
+    color:cyan;
+}
+header h2 span{
+    color: darkorange;
+}
+#hero-img{
+    height: 350px;
+    width: 350px;
+    float: right;
+    margin-right: 1rem;
+}
+#hero-img img{
+    height: 100%;
+    width: 100%;
+}
+#h1{
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+    color: turquoise;
+    text-decoration: underline;
+    margin: 2rem 0;
+    font-size: 3rem;
+}
+#bio{
+    height: auto;
+    padding: 15px;
+    width: 35rem;
+    margin-left: 3rem;
+}
+#h2-bio{
+    text-align: center;
+    color: darkorange;
+    font-size: 2rem;
+    text-decoration: underline;
+}
+#bio>div{
+    color:rgb(92, 168, 5);
+    font-size: 1.3rem;
+    margin: 1rem 0;
+    border-bottom: 1px solid cyan;
+    padding: 5px;
+}
+#bio div div{
+    display: inline-block;
+     color: cyan;
+}
+#powerstates{
+    height: auto;
+    padding: 15px;
+    width: 35rem;
+    margin-left: 3rem;
+}
+#h2-power{
+    text-align: center;
+    color: darkorange;
+    font-size: 2rem;
+    text-decoration: underline;
+}
+#powerstates>div{
+    color:rgb(92, 168, 5);
+    font-size: 1.3rem;
+    margin: 1rem 0;
+    border-bottom: 1px solid cyan;
+    padding: 5px;
+}
+
+#powerstates div div{
+    display: inline-block;
+     color: cyan;
+}

@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #222;
+}
+header{
+    width: 100%;
+    height: auto;
+    padding: 1.5rem;
+}
+header h2 {
+    color:cyan;
+}
+header h2 span{
+    color: darkorange;
+}
+main{
+    position: relative;
+}
+#fav-bar{
+    width: 100%;
+    margin-top: 2.5rem;
+    height: auto;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+#fav-bar a{
+    text-decoration: none;
+    cursor: pointer;
+}
+#fav-bar #fav-btn{
+    width: 10rem;
+    border: none;
+    outline: none;
+    background-color: darkblue;
+    padding: 8px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: cyan;
+    margin-right: 1rem;
+}
+#input{
+    width: 50%;
+    margin: 4rem auto 1rem;
+}
+#input input{
+    padding: 10px;
+    font-size: 1.3rem;
+    color: white;
+    background-color: darkblue;
+    width: 100%;
+    outline: none;
+    border: none;
+}
+#search-list{
+    width: 50%;
+    height: 25rem;
+    margin: auto;
+    overflow: scroll;
+}
+ .search-item{
+    width: 500px;
+    height: auto;
+    display: flex;
+    margin-bottom: 20px;
+
+}
+ .list-image{
+    width: 200px;
+    height: 200px;
+
+}
+ .list-image img{
+    height: 100%;
+    width: 100%;
+}
+ .list-details{
+    height: 200px;
+     width: 200px;
+    padding: 20px;
+    color: white;
+    font-size: 1.2rem;
+}
+  button{
+    margin-top: 1rem;
+    padding: 5px;
+    width: 6rem;
+    color: black;
+    background-color: cyan;
+    border: none;
+    outline: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+#search-list::-webkit-scrollbar {
+    display: none;
+}
