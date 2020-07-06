@@ -1,13 +1,15 @@
 var favList=document.getElementById("fav-list");
-var arr=localStorage.getItem('likeName');
-var arr1=JSON.parse(arr);
-var i;
-for( i=0;i<arr1.length;i++){
+for( i=0;i<localStorage.length;i++){
         
-        var xhrName=new XMLHttpRequest();
-        xhrName.onload=function(){
-            var responseName=JSON.parse(xhrName.response);
-            var nameUrl=responseName.name;
+        // var xhrName=new XMLHttpRequest();
+        // xhrName.onload=function(){
+        //     var responseName=JSON.parse(xhrName.response);
+        //     var id=responseName.results[0].id;
+        //     console.log(id);
+        // }
+            var heroname=localStorage.key(i);
+            console.log(heroname);
+            var heroval=localStorage.getItem(name);
 
             var btn=document.createElement('button');
             btn.setAttribute('class','btn');
@@ -15,9 +17,8 @@ for( i=0;i<arr1.length;i++){
             btn.innerHTML="Unlike";
            
             var anchor=document.createElement('a');
-            anchor.setAttribute('href','herodetail.html');
-            anchor.innerHTML=nameUrl;
-
+            anchor.setAttribute('href','#');
+            anchor.innerHTML=heroname;
             var divBtn=document.createElement('div');
             divBtn.setAttribute("class","hero-name");
 
@@ -28,9 +29,22 @@ for( i=0;i<arr1.length;i++){
             divName.appendChild(divBtn);
             divName.appendChild(btn);
             favList.appendChild(divName);
-        }
 
-        xhrName.open('get',"https://superheroapi.com/api.php/2645388492343736/search/"+arr1[i],true);
-        xhrName.send();
-      
+            // var heroName=document.createElement('div');
+            // heroName.setAttribute("class","hero-name");
+            // heroName.innerHTML=heroname;
+            // list.appendChild(heroName);
+
 }
+
+        // xhrName.open('get',"https://superheroapi.com/api.php/2645388492343736/search/"+heroname,true);
+        // xhrName.send();
+        document.getElementsByClassName("btn")[0].addEventListener('click',remove);
+
+        function remove(){
+                anchor.innerHTML="";
+                localStorage.removeItem(heroname);
+                location.reload();
+
+        }
+      

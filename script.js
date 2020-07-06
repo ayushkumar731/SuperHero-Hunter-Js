@@ -19,6 +19,8 @@
     //    refresh search list 
        document.getElementById("search-list").innerHTML="";
 
+       
+
        //onload function
 
         xhrRequest.onload=function(){
@@ -27,11 +29,7 @@
 
 
                
-                function favourite(){
-                    arr.push(name);
-                    JsonString=JSON.stringify(arr);
-                    localStorage.setItem('likedName',JsonString);
-                }
+              
 
                 //fetching image url
 
@@ -62,7 +60,7 @@
                 divBtn.setAttribute("class","like-btn");
                 var btn=document.createElement("button");
                 btn.setAttribute("class","btn");
-                btn.addEventListener('click',favourite);
+                
                 btn.innerHTML="Like";
                 var divImg=document.createElement("div");
                 divImg.setAttribute("class","list-image");
@@ -85,6 +83,13 @@
                 div.appendChild(divDet);
 
                 list.appendChild(div);
+
+                btn.addEventListener('click',favourite);
+                
+                function favourite(e){
+                        localStorage.setItem(name,1);
+                    
+                }
 
             }
             
