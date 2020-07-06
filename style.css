@@ -1,3 +1,6 @@
+
+/* styling */
+
 *{
     margin: 0;
     padding: 0;
@@ -6,10 +9,16 @@
 body{
     background-color: #222;
 }
+
+/* header-styling */
+
 header{
     width: 100%;
     height: auto;
     padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
 }
 header h2 {
     color:cyan;
@@ -17,36 +26,42 @@ header h2 {
 header h2 span{
     color: darkorange;
 }
+
+
 main{
     position: relative;
 }
-#fav-bar{
-    width: 100%;
-    margin-top: 2.5rem;
-    height: auto;
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-    
-}
-#fav-bar a{
+/* styling favourite button */
+
+#fav-btn a{
     text-decoration: none;
     cursor: pointer;
-}
-#fav-bar #fav-btn{
-    width: 10rem;
-    border: none;
-    outline: none;
-    background-color: darkblue;
-    padding: 8px;
-    text-align: center;
+    color: cyan;
     font-size: 1.5rem;
+}
+#fav-btn a:hover{
+    color: darkorange;
+}
+ #fav-btn{
     color: cyan;
     margin-right: 1rem;
 }
+
+/* heading for user */
+
+#heading{
+    width: 100%;
+    color: whitesmoke;
+    font-family: cursive;
+    text-align: center;
+    margin-top: 7rem;
+}
+
+/* search bar styling */
+
 #input{
     width: 50%;
-    margin: 4rem auto 1rem;
+    margin: 1rem auto 1rem;
 }
 #input input{
     padding: 10px;
@@ -57,6 +72,9 @@ main{
     outline: none;
     border: none;
 }
+
+/* styling serch list where appears all suggestion with the key entry */
+
 #search-list{
     width: 50%;
     height: 25rem;
@@ -70,6 +88,9 @@ main{
     margin-bottom: 20px;
 
 }
+
+/* styling image of heros */
+
  .list-image{
     width: 200px;
     height: 200px;
@@ -79,6 +100,7 @@ main{
     height: 100%;
     width: 100%;
 }
+/* where phtos and name and strength appears one by one */
  .list-details{
     height: 200px;
      width: 200px;
@@ -86,6 +108,9 @@ main{
     color: white;
     font-size: 1.2rem;
 }
+
+/* styling like btn */
+
   button{
     margin-top: 1rem;
     padding: 5px;
@@ -97,6 +122,9 @@ main{
     font-size: 1.3rem;
     cursor: pointer;
 }
+
+/* to hide scroll bar which is in seach-list */
+
 #search-list::-webkit-scrollbar {
     display: none;
 }

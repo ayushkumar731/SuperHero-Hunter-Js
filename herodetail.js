@@ -1,8 +1,13 @@
+//access html id
+
 var id =localStorage.getItem("heroId");
  var image=document.getElementById('hero-img');
 var nameHero=document.getElementById('h1');
+
+//initialize http request
 var xhrRequest=new XMLHttpRequest();
 
+//api request for image of superhero
 xhrRequest.onload=function(){
     var responseJson=JSON.parse(xhrRequest.response);
     var imgUrl=responseJson.url;
@@ -14,6 +19,8 @@ xhrRequest.onload=function(){
 xhrRequest.open("GET","https://superheroapi.com/api.php/2645388492343736/"+id+"/image");
 xhrRequest.send();
 
+
+//api request for name of superhero
 var xhrName=new XMLHttpRequest();
 xhrName.onload=function(){
     var responseName=JSON.parse(xhrName.response);
@@ -25,6 +32,8 @@ xhrName.onload=function(){
 xhrName.open("GET","https://superheroapi.com/api.php/2645388492343736/"+id);
 xhrName.send();
 
+
+//api request for bio of superhero
 
 var xhrBio=new XMLHttpRequest();
 xhrBio.onload=function(){
@@ -63,6 +72,7 @@ xhrBio.open("GET","https://superheroapi.com/api.php/2645388492343736/"+id);
 xhrBio.send();
 
 
+//api request for power stats of superhero
 
 let xhrpowerstat=new XMLHttpRequest();
 xhrpowerstat.onload=function(){
@@ -87,5 +97,10 @@ xhrpowerstat.onload=function(){
 	document.getElementById("combat").appendChild(div6);
 }
 
+//initialize request 
+
 xhrpowerstat.open("GET","https://superheroapi.com/api.php/2645388492343736/"+id+"/powerstats");
+
+// send request
+
 xhrpowerstat.send();

@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #222;
+}
+header{
+    width: 100%;
+    height: auto;
+    padding: 1.5rem;
+}
+header h2{
+    color: cyan;
+}
+header span{
+    color: darkorange;
+}
+#home-btn{
+    padding: 5px;
+    margin: 2rem 1rem 0;
+    width: 10rem;
+    cursor: pointer;
+    background-color: teal;
+    font-size: 1.5rem;
+    border: none;
+    outline: none;
+    color: whitesmoke;
+}
+main h1{
+    height: auto;
+    color: rgb(10, 216, 44);
+    width: 12rem;
+    margin: auto;
+    text-decoration: underline;
+
+}
+#fav-list{
+    border: 1px solid white;
+    width: 50%;
+    height:68vh;
+    overflow: scroll;
+    margin:1.2rem auto;
+    padding: 10px;
+}
+
+#fav-list::-webkit-scrollbar {
+    display: none;
+}
+
+.name{
+    width: 400px;
+    height: auto;
+    border: 1px solid white;
+    font-size: 1.5rem;
+ 
+    padding: 5px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.hero-name a{
+    text-decoration: none;
+    color: cyan;
+}
+.btn{
+    padding: 5px;
+    outline: none;
+    border: none;
+    background-color: rgb(136, 79, 10);
+    color: cyan;
+    font-weight: bold;
+    width: 5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+}

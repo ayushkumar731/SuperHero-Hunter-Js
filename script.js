@@ -1,18 +1,49 @@
 
+    //access all id 
+
     var search=document.getElementById("search-bar");
-  var list=document.getElementById("search-list");
+    var list=document.getElementById("search-list");
     var btn=document.getElementsByClassName('btn')[0];
+    var arr=[];
+    //function to heroes image and name and strenth
+
     function fetchHero(){
+
+        //initialize request
         var xhrRequest=new XMLHttpRequest();
+
+        //take the value of search bar
+
        var val=search.value;
+
+    //    refresh search list 
        document.getElementById("search-list").innerHTML="";
+
+       //onload function
+
         xhrRequest.onload=function(){
             var responseJson=JSON.parse(xhrRequest.response);
             for(var i=0;i<responseJson.results.length;i++){
+
+
+               
+                function favourite(){
+                    arr.push(name);
+                    JsonString=JSON.stringify(arr);
+                    localStorage.setItem('likedName',JsonString);
+                }
+
+                //fetching image url
+
                 var imgUrl=responseJson.results[i].image.url;
+                //fetching name
                 var name=responseJson.results[i].name;
+
+                //fetching powerstats
                 var strength=responseJson.results[i].powerstats.strength;
 
+
+                //creting elemens and append it
                 var div=document.createElement("div");
                 div.setAttribute("class","search-item");
 
@@ -31,6 +62,7 @@
                 divBtn.setAttribute("class","like-btn");
                 var btn=document.createElement("button");
                 btn.setAttribute("class","btn");
+                btn.addEventListener('click',favourite);
                 btn.innerHTML="Like";
                 var divImg=document.createElement("div");
                 divImg.setAttribute("class","list-image");
@@ -39,7 +71,7 @@
 
                 var anchor=document.createElement("a");
                 anchor.setAttribute("href","herodetail.html");
-                anchor.setAttribute("onclick","herodetail("+responseJson.results[i].id+")")
+                anchor.setAttribute("onclick","herodetail("+responseJson.results[i].id+")");
                 
                 divBtn.appendChild(btn);
 
@@ -57,13 +89,17 @@
             }
             
         }
+        //initializing request
         xhrRequest.open('get',"https://superheroapi.com/api.php/2645388492343736/search/"+val,true);
+
+        //sending request
         xhrRequest.send();
     }
-     search.addEventListener('keyup',fetchHero);
+search.addEventListener('keyup',fetchHero);
 
+        //this function is calling when someone click on photo and  the id in the local storage
 
-     function herodetail(id){
-        localStorage.setItem("heroId",id);
-        console.log(id);
-    }
+function herodetail(id){
+    localStorage.setItem("heroId",id);
+}
+

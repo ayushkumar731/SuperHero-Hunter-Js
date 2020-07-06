@@ -6,10 +6,18 @@
 body{
     background-color: #222;
 }
+
+/* styling the header part */
+
 header{
     width: 100%;
     height:auto;
     padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    position: sticky;
+    top: 0;
 }
 header h2 {
     color:cyan;
@@ -17,69 +25,104 @@ header h2 {
 header h2 span{
     color: darkorange;
 }
-#hero-img{
-    height: 350px;
-    width: 350px;
-    float: right;
+header a{
+    text-decoration: none;
+    color: cyan;
+    font-size: 1.5rem;
     margin-right: 1rem;
 }
-#hero-img img{
-    height: 100%;
-    width: 100%;
+header a:hover{
+    color: tomato;
 }
+
+/* container main content */
+
+#border{
+    width: 60%;
+    box-shadow: 0.5px 0.5px 2px 1px lightgrey;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.01);
+    z-index: 0;
+    padding: 10px;
+}
+
+
+/* styling hero name */
 #h1{
     width: 100%;
     padding: 5px;
     text-align: center;
     color: turquoise;
-    text-decoration: underline;
     margin: 2rem 0;
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
+
+/* set the hero image */
+
+#hero-img{
+    height: 380px;
+    width: 350px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+#hero-img img{
+    height: 100%;
+    width: 100%;
+}
+#hero-img img:hover{
+    transform: scale(1.1);
+}
+
+/* SET THE BIO PART */
 #bio{
     height: auto;
-    padding: 15px;
-    width: 35rem;
+    padding: 10px;
+    width: 90%;
     margin-left: 3rem;
 }
 #h2-bio{
-    text-align: center;
     color: darkorange;
-    font-size: 2rem;
-    text-decoration: underline;
+    font-size: 2.1rem;
 }
 #bio>div{
-    color:rgb(92, 168, 5);
+    color:rgb(114, 207, 7);
     font-size: 1.3rem;
     margin: 1rem 0;
     border-bottom: 1px solid cyan;
     padding: 5px;
+    display: flex;
+    justify-content: space-between;
 }
 #bio div div{
-    display: inline-block;
      color: cyan;
 }
 #powerstates{
     height: auto;
     padding: 15px;
-    width: 35rem;
+    width: 90%;
     margin-left: 3rem;
 }
+
+/* styling power stats */
+
 #h2-power{
-    text-align: center;
     color: darkorange;
-    font-size: 2rem;
-    text-decoration: underline;
+    font-size: 2.1rem;
 }
 #powerstates>div{
-    color:rgb(92, 168, 5);
+    color:rgb(114, 207, 7);
     font-size: 1.3rem;
     margin: 1rem 0;
     border-bottom: 1px solid cyan;
     padding: 5px;
+    display: flex;
+    justify-content: space-between;
 }
 
 #powerstates div div{
     display: inline-block;
-     color: cyan;
+     color:cyan;
 }
