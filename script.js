@@ -84,12 +84,12 @@
 
                 list.appendChild(div);
 
-                btn.addEventListener('click',favourite);
-                
-                function favourite(e){
-                        localStorage.setItem(name,1);
-                    
-                }
+                btn.addEventListener('click',function(){
+                    var index = localStorage.length;
+                    var data = JSON.stringify(responseJson.results[0]);
+                    localStorage.setItem(index,data);
+
+                });
 
             }
             

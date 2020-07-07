@@ -104,3 +104,5 @@ xhrpowerstat.open("GET","https://superheroapi.com/api.php/2645388492343736/"+id+
 // send request
 
 xhrpowerstat.send();
+
+localStorage.removeItem("heroId");

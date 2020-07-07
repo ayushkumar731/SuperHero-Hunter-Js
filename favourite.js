@@ -1,50 +1,42 @@
 var favList=document.getElementById("fav-list");
-for( i=0;i<localStorage.length;i++){
+
+for(let i=0;i<localStorage.length;i++){
+
+        var json=JSON.parse(localStorage.getItem(i));
+
+        var btn=document.createElement('button');
+         btn.setAttribute('class','btn');
+        btn.setAttribute("onclick","remove("+i+")");
+        btn.innerHTML="Unlike";
+                   
+        var anchor=document.createElement('a');
+        anchor.setAttribute('href','herodetail.html');
+        anchor.innerHTML=json.name;
+        anchor.addEventListener('click',function(){
+                localStorage.setItem("heroId",json.id);
+        })
+        var divBtn=document.createElement('div');
+        divBtn.setAttribute("class","hero-name");
         
-        // var xhrName=new XMLHttpRequest();
-        // xhrName.onload=function(){
-        //     var responseName=JSON.parse(xhrName.response);
-        //     var id=responseName.results[0].id;
-        //     console.log(id);
-        // }
-            var heroname=localStorage.key(i);
-            console.log(heroname);
-            var heroval=localStorage.getItem(name);
+        var divName=document.createElement('div');
+        divName.setAttribute("class","name");
+        
+        var divImg=document.createElement('div');
+        divImg.setAttribute("class","image");
+        var img=document.createElement('img');
+        img.setAttribute("src",json.image.url);
+        divImg.appendChild(img);
 
-            var btn=document.createElement('button');
-            btn.setAttribute('class','btn');
-            btn.setAttribute("onclick","remove("+i+")");
-            btn.innerHTML="Unlike";
-           
-            var anchor=document.createElement('a');
-            anchor.setAttribute('href','#');
-            anchor.innerHTML=heroname;
-            var divBtn=document.createElement('div');
-            divBtn.setAttribute("class","hero-name");
-
-            var divName=document.createElement('div');
-            divName.setAttribute("class","name");
-
-            divBtn.appendChild(anchor);
-            divName.appendChild(divBtn);
-            divName.appendChild(btn);
-            favList.appendChild(divName);
-
-            // var heroName=document.createElement('div');
-            // heroName.setAttribute("class","hero-name");
-            // heroName.innerHTML=heroname;
-            // list.appendChild(heroName);
-
-}
-
-        // xhrName.open('get',"https://superheroapi.com/api.php/2645388492343736/search/"+heroname,true);
-        // xhrName.send();
-        document.getElementsByClassName("btn")[0].addEventListener('click',remove);
+        divBtn.appendChild(anchor);
+         
+        divName.appendChild(divBtn); 
+        divName.appendChild(divImg);  
+        divName.appendChild(btn);    
+        favList.appendChild(divName);
 
         function remove(){
-                anchor.innerHTML="";
-                localStorage.removeItem(heroname);
+                localStorage.removeItem(i);
                 location.reload();
-
         }
-      
+       
+}
