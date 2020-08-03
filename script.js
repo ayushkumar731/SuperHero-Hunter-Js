@@ -25,7 +25,7 @@
 
         xhrRequest.onload=function(){
             var responseJson=JSON.parse(xhrRequest.response);
-            for(var i=0;i<responseJson.results.length;i++){
+            for(var i=0;i<responseJson.results.length&&i<10;i++){
 
 
                
@@ -68,7 +68,6 @@
                 image.setAttribute("src", imgUrl);
 
                 var anchor=document.createElement("a");
-                anchor.setAttribute("href","herodetail.html");
                 anchor.setAttribute("onclick","herodetail("+responseJson.results[i].id+")");
                 
                 divBtn.appendChild(btn);
@@ -105,6 +104,6 @@ search.addEventListener('keyup',fetchHero);
         //this function is calling when someone click on photo and  the id in the local storage
 
 function herodetail(id){
-    localStorage.setItem("heroId",id);
+    window.open("herodetail.html?id=" + id, "_self");
 }
 

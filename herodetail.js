@@ -1,6 +1,8 @@
 //access html id
 
-var id =localStorage.getItem("heroId");
+const params = new URLSearchParams(window.location.search);
+var id = params.get('id');
+// var id =localStorage.getItem("nameId");
  var image=document.getElementById('hero-img');
 var nameHero=document.getElementById('h1');
 

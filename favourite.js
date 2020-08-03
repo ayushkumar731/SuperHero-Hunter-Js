@@ -13,7 +13,7 @@ for(let i=0;i<localStorage.length;i++){
         anchor.setAttribute('href','herodetail.html');
         anchor.innerHTML=json.name;
         anchor.addEventListener('click',function(){
-                localStorage.setItem("heroId",json.id);
+                localStorage.setItem("nameId",json.id);
         })
         var divBtn=document.createElement('div');
         divBtn.setAttribute("class","hero-name");
