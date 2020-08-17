@@ -60,7 +60,8 @@
                 divBtn.setAttribute("class","like-btn");
                 var btn=document.createElement("button");
                 btn.setAttribute("class","btn");
-                
+                btn.setAttribute("onclick","favourite("+responseJson.results[i].id+")");
+
                 btn.innerHTML="Like";
                 var divImg=document.createElement("div");
                 divImg.setAttribute("class","list-image");
@@ -83,13 +84,6 @@
 
                 list.appendChild(div);
 
-                btn.addEventListener('click',function(){
-                    var index = localStorage.length;
-                    var data = JSON.stringify(responseJson.results[0]);
-                    localStorage.setItem(index,data);
-
-                });
-
             }
             
         }
@@ -103,7 +97,18 @@ search.addEventListener('keyup',fetchHero);
 
         //this function is calling when someone click on photo and  the id in the local storage
 
-function herodetail(id){
+function herodetail(id){    
     window.open("herodetail.html?id=" + id, "_self");
 }
 
+function favourite(id){
+    let hero=localStorage.getItem("hero");
+    if(hero==null){
+        var heros=[];
+    }else{
+        heros=JSON.parse(hero);
+    }
+    heros.push(id);
+    localStorage.setItem('hero',JSON.stringify(heros));
+
+};

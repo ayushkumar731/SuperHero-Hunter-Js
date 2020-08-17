@@ -37,12 +37,17 @@ main h1{
 
 }
 #fav-list{
-    width: 50%;
-    height:auto;
+    width: 80%;
+    height:30rem;
     margin:1.2rem auto;
     padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
 }
-
+#fav-list::-webkit-scrollbar {
+    display: none;
+  }
 
 .name{
     width: 20rem;
@@ -54,6 +59,7 @@ main h1{
     display: flex;
     flex-direction: column;
     align-items: center;
+    cursor: pointer;
 }
 .image{
     height: 250px;
@@ -62,8 +68,7 @@ main h1{
     border: 1px solid white;
     margin: auto;
     margin-bottom: 1rem;
-
-
+    cursor:default;
 }
 .name .hero-name{
     margin-bottom: 1rem;
